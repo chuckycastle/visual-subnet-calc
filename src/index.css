@@ -1,0 +1,339 @@
+@import "tailwindcss";
+
+@theme {
+  /* Primary color scale */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
+
+  /* Success color scale */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+
+  /* Warning color scale */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-warning-700: #b45309;
+  --color-warning-800: #92400e;
+  --color-warning-900: #78350f;
+
+  /* Error color scale */
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-200: #fecaca;
+  --color-error-300: #fca5a5;
+  --color-error-400: #f87171;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-error-700: #b91c1c;
+  --color-error-800: #991b1b;
+  --color-error-900: #7f1d1d;
+
+  /* Subnet visualization colors */
+  --color-subnet-50: #f0f9ff;
+  --color-subnet-100: #e0f2fe;
+  --color-subnet-200: #bae6fd;
+  --color-subnet-300: #7dd3fc;
+  --color-subnet-400: #38bdf8;
+  --color-subnet-500: #0ea5e9;
+  --color-subnet-600: #0284c7;
+  --color-subnet-700: #0369a1;
+  --color-subnet-800: #075985;
+  --color-subnet-900: #0c4a6e;
+
+  /* Network status colors */
+  --color-network-host: #10b981;
+  --color-network-network: #3b82f6;
+  --color-network-broadcast: #f59e0b;
+  --color-network-unavailable: #6b7280;
+
+  /* Custom shadows */
+  --shadow-soft: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  --shadow-medium: 0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+  --shadow-strong: 0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 4px 25px -5px rgba(0, 0, 0, 0.08);
+  --shadow-colored: 0 8px 30px -5px rgba(59, 130, 246, 0.3);
+  --shadow-success: 0 8px 25px -5px rgba(34, 197, 94, 0.3);
+  --shadow-warning: 0 8px 25px -5px rgba(245, 158, 11, 0.3);
+  --shadow-error: 0 8px 25px -5px rgba(239, 68, 68, 0.3);
+
+  /* Custom animations */
+  --animate-fade-in: fadeIn 0.3s ease-in-out;
+  --animate-slide-up: slideUp 0.4s ease-out;
+  --animate-slide-down: slideDown 0.3s ease-in;
+  --animate-pulse-subtle: pulseSubtle 2s ease-in-out infinite;
+  --animate-bounce-gentle: bounceGentle 0.6s ease-out;
+  --animate-scale-in: scaleIn 0.2s ease-out;
+  --animate-wiggle: wiggle 0.5s ease-in-out;
+  --animate-gradient-shift: gradientShift 3s ease-in-out infinite;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(10px); }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes bounceGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes scaleIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-1deg); }
+  75% { transform: rotate(1deg); }
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Base styles for dark mode support */
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply transition-colors duration-300;
+  }
+  
+  /* Improve focus visibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2;
+  }
+  
+  /* Better mobile touch targets */
+  @media (pointer: coarse) {
+    button, [role="button"], input[type="submit"], input[type="button"] {
+      @apply min-h-[44px];
+    }
+  }
+}
+
+/* Custom component styles - converted to regular CSS for Tailwind v4 compatibility */
+.card {
+  background-color: white;
+  border: 1px solid rgb(229 231 235);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-medium);
+}
+
+.card-elevated {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: var(--shadow-medium);
+  border: none;
+  transition: all 0.3s;
+}
+
+.card-elevated:hover {
+  box-shadow: var(--shadow-strong);
+}
+
+/* Input and button styles */
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid rgb(229 231 235);
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  background-color: white;
+  color: rgb(17 24 39);
+  min-height: 3rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.input-field:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+}
+
+.btn-primary-large {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s;
+  background: linear-gradient(to right, var(--color-primary-600), var(--color-primary-700));
+  color: white;
+  min-height: 3.5rem;
+  padding: 1rem 2rem;
+  box-shadow: var(--shadow-colored);
+}
+
+.btn-primary-large:hover {
+  background: linear-gradient(to right, var(--color-primary-700), var(--color-primary-800));
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
+  transform: scale(1.05) translateY(-2px);
+}
+
+.btn-primary-large:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Status indicators */
+.status-success {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: var(--color-success-100);
+  color: var(--color-success-800);
+}
+
+.status-error {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: var(--color-error-100);
+  color: var(--color-error-800);
+}
+
+.status-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  background-color: var(--color-primary-100);
+  color: var(--color-primary-800);
+}
+
+/* Page layout */
+.page-header {
+  font-size: 2.25rem;
+  font-weight: 700;
+  background: linear-gradient(to right, var(--color-primary-600), var(--color-primary-800));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .page-header {
+    font-size: 3rem;
+  }
+}
+
+.section-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgb(17 24 39);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+.input-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgb(31 41 55);
+  margin-bottom: 0.5rem;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .card, .card-elevated {
+    background-color: rgb(17 24 39);
+    border-color: rgb(55 65 81);
+  }
+  
+  .input-field {
+    background-color: rgb(31 41 55);
+    border-color: rgb(75 85 99);
+    color: rgb(243 244 246);
+  }
+  
+  .section-header {
+    color: white;
+  }
+  
+  .input-label {
+    color: rgb(229 231 235);
+  }
+  
+  .status-success {
+    background-color: rgb(34 197 94 / 0.3);
+    color: rgb(134 239 172);
+  }
+  
+  .status-error {
+    background-color: rgb(239 68 68 / 0.3);
+    color: rgb(252 165 165);
+  }
+  
+  .status-info {
+    background-color: rgb(59 130 246 / 0.3);
+    color: rgb(147 197 253);
+  }
+}
