@@ -35,7 +35,7 @@ A modern, professional subnet calculator built with React, TypeScript, and Tailw
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/visual-subnet-calc.git
+git clone https://github.com/chuckycastle/visual-subnet-calc.git
 cd visual-subnet-calc
 
 # Install dependencies
@@ -268,9 +268,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/visual-subnet-calc/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/visual-subnet-calc/discussions)
-- **Documentation**: [Project Wiki](https://github.com/yourusername/visual-subnet-calc/wiki)
+- **Issues**: [GitHub Issues](https://github.com/chuckycastle/visual-subnet-calc/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/chuckycastle/visual-subnet-calc/discussions)
+- **Documentation**: [Project Wiki](https://github.com/chuckycastle/visual-subnet-calc/wiki)
 
 ---
 
