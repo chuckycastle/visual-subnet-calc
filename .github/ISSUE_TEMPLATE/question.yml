@@ -1,0 +1,43 @@
+name: Question
+description: Ask a question about usage or functionality
+title: '[Question]: '
+labels: ['question']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ask questions about how to use the subnet calculator or clarify functionality.
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: What would you like to know?
+      placeholder: Ask your question here
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Additional context about your question
+      placeholder: What are you trying to accomplish?
+    validations:
+      required: false
+
+  - type: textarea
+    id: attempted
+    attributes:
+      label: What You've Tried
+      description: Steps or approaches you've already attempted
+      placeholder: What have you already tried?
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Information
+      description: Any other relevant information
+      placeholder: Screenshots, code snippets, etc.
