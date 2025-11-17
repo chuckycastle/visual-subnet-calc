@@ -2,7 +2,7 @@
 
 IPv4 subnet calculator with visualization and CIDR notation support (/0 to /32).
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg) ![React](https://img.shields.io/badge/React-19.1-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue) ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1-blue)
+![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg) ![React](https://img.shields.io/badge/React-19.1-blue) ![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue) ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.1-blue)
 
 ## Features
 
@@ -234,7 +234,9 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for development workflow and coding stand
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+This work is licensed under CC BY-NC-SA 4.0 (Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International).
+
+See [LICENSE](LICENSE) file for details or visit https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 ## Links
 

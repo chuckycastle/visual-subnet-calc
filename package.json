@@ -4,7 +4,7 @@
   "description": "IPv4 subnet calculator with visualization and CIDR notation support",
   "type": "module",
   "author": "chuckycastle",
-  "license": "MIT",
+  "license": "CC-BY-NC-SA-4.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/chuckycastle/visual-subnet-calc.git"
